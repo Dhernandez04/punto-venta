@@ -61,6 +61,7 @@ public class CategoryController {
         if(!categoryDB.isPresent()){
             throw  new RuntimeException("No existe la categoria con id "+id);
         }
+        categoryService.deleteById(id);
         logger.info("End method to deleById category");
         return  ResponseEntity.ok(true);
     }
